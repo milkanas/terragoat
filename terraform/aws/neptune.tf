@@ -14,8 +14,8 @@ resource "aws_neptune_cluster_instance" "default" {
   cluster_identifier                  = aws_neptune_cluster.default.id
   engine                              = "neptune"
   instance_class                      = "db.t3.medium" # Smallest instance type listed for neptune https://aws.amazon.com/neptune/pricing/
-  apply_immediately                   = true
-  #publicly_accessible                = true # No longer supported, API returns create error. See https://docs.aws.amazon.com/neptune/latest/userguide/api-instances.html#CreateDBInstance
+  apply_immediately                   = false
+  #publicly_accessible                = false # No longer supported, API returns create error. See https://docs.aws.amazon.com/neptune/latest/userguide/api-instances.html#CreateDBInstance
 }
 
 resource "aws_neptune_cluster_snapshot" "default" {
